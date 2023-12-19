@@ -1,0 +1,132 @@
+#!/bin/bash
+
+# Copyright (C) 2023 M.Angel Juan
+#
+# This file is part of LLXAMP.
+#
+# LLXAMP is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# LLXAMP is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with LLXAMP.  If not, see <http://www.gnu.org/licenses/>.
+
+program=$(basename "${BASH_SOURCE[0]}")
+
+if [ -e "$HOME/llxamp/mysql" ]; then
+    daemon=mysqld
+fi
+if [ -e "$HOME/llxamp/mariadb" ]; then
+    daemon=mariadbd
+fi
+
+show_help(){
+    echo
+    echo "Usage:"
+    echo
+    echo "$program [ -a | -m ] [ -p | -n ] [ -h ]"
+    echo "  -a: select apache status"
+    echo "  -m: select mysql status"
+    echo "  -n: show using procs"
+    echo "  -u: show using ports"
+    echo "  -h: this help"
+    echo
+}
+
+has_opts=
+apache=
+mysql=
+show_ports=
+show_procs=
+for param in "$@"; do
+    case "$param" in
+        -a*)
+            apache='yes'
+            has_opts='yes'
+        ;;
+        -m*)
+            mysql='yes'
+            has_opts='yes'
+        ;;
+        -p*)
+            show_procs='yes'
+            has_opts='yes'
+        ;;
+        -n*)
+            show_ports='yes'
+            has_opts='yes'
+        ;;
+        -h*)
+            show_help
+            exit 0
+        ;;
+    esac
+done
+
+function check_running(){
+    ss -Htpnle |grep "uid:$(id -u)"|grep $1
+}
+function check_ports(){
+    ss -Htpnle |grep "uid:$(id -u)"|grep $1|awk '{print $4}'|rev|cut -d':' -f1|rev|sort -n|xargs|tr ' ' ','
+}
+function check_procs(){
+    ss -Htpnle |grep "uid:$(id -u)"|grep $1|awk '{print $6}'|egrep -o 'pid=[0-9]+'|cut -d'=' -f2|xargs|tr ' ' ','
+}
+# Apache
+apache_running=
+if [ -z "$has_opts" -o -n "$apache" ]; then
+    if [ -n "$(check_running httpd)" ]; then
+        apache_running='yes'
+        if [ -z "$has_opts" -o -n "$show_ports" ]; then
+            apache_ports=$(check_ports httpd)
+        fi
+        if [ -z "$has_opts" -o -n "$show_procs" ]; then
+            apache_procs=$(check_procs httpd)
+        fi
+    fi
+fi
+# Mysql
+mysql_running=
+if [ -z "$has_opts" -o -n "$mysql" ];then
+    if [ -n "$(check_running $daemon)" ]; then
+        mysql_running='yes'
+        if [ -z "$has_opts" -o -n "$show_ports" ]; then
+            mysql_ports=$(check_ports $daemon)
+        fi
+        if [ -z "$has_opts" -o -n "$show_procs" ]; then
+            mysql_procs=$(check_procs $daemon)
+        fi
+    fi
+fi
+ret=0
+# has_opts
+if [ -z "$has_opts" ]; then
+    if [ -z "$apache_running" ];then
+        echo "Apache: Not running"
+    else
+        echo "Apache: Running Ports: $apache_ports Procs: $apache_procs"
+    fi
+    if [ -z "$mysql_running" ];then
+        echo "MySQL: Not running"
+    else
+        echo "MySQL: Running Ports: $mysql_ports Procs: $mysql_procs"
+    fi
+else
+    if [ -n "$apache" ]; then
+        [ -z "$apache_running" ] && echo APACHE_RUNNING=0 && ret=1 || echo APACHE_RUNNING=1
+        [ -n "$show_ports" ] && echo APACHE_PORTS=$apache_ports
+        [ -n "$show_procs" ] && echo APACHE_PROCS=$apache_procs
+    fi
+    if [ -n "$mysql" ]; then
+        [ -z "$mysql_running" ] && echo MYSQL_RUNNING=0 && ret=1 || echo MYSQL_RUNNING=1
+        [ -n "$show_ports" ] && echo MYSQL_PORTS=$mysql_ports
+        [ -n "$show_procs" ] && echo MYSQL_PROCS=$mysql_procs
+    fi
+fi
+exit $ret

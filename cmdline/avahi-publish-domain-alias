@@ -1,0 +1,113 @@
+#!/usr/bin/env python3
+
+"""
+ Copyright (C) 2023
+
+ This file is part of LLXAMP.
+
+ LLXAMP is free software: you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+ LLXAMP is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with LLXAMP.  If not, see <http://www.gnu.org/licenses/>.
+"""
+
+import os, avahi, dbus, signal
+from encodings.idna import ToASCII
+
+exit = False
+def exit_now(*args):
+    global exit
+    exit = True
+    print("Exiting")
+    sys.exit(0)
+
+signal.signal(signal.SIGINT,exit_now)
+
+# Got these from /usr/include/avahi-common/defs.h
+CLASS_IN = 0x01
+TYPE_CNAME = 0x05
+
+TTL = 60
+
+def get_names():
+    bus = dbus.SystemBus()
+    server = dbus.Interface(bus.get_object(avahi.DBUS_NAME, avahi.DBUS_PATH_SERVER),
+            avahi.DBUS_INTERFACE_SERVER)
+    return { 'domain': str(server.GetDomainName()), 'fqdn': str(server.GetHostNameFqdn()), 'hostname': str(server.GetHostName()) }
+
+names = get_names()
+
+def show_help():
+    filename = os.path.basename(__file__)
+    print(f'''Usage:
+    {filename} [ -i ] | [<alias> ... <alias>]
+        Options:
+            -i : Show info
+            -h : This help
+        Parameters:
+            <alias> = <hostname>.<avahi_domain>
+            <hostname> : any string
+            <avahi_domain> = {names.get('domain')}
+''')
+
+def show_info():
+    print(f'''HOSTNAME={names.get('hostname')}\nDOMAIN={names.get('domain')}\nFQDN={names.get('fqdn')}''')
+
+def publish_cname(cname):
+    bus = dbus.SystemBus()
+    server = dbus.Interface(bus.get_object(avahi.DBUS_NAME, avahi.DBUS_PATH_SERVER),
+            avahi.DBUS_INTERFACE_SERVER)
+    group = dbus.Interface(bus.get_object(avahi.DBUS_NAME, server.EntryGroupNew()),
+            avahi.DBUS_INTERFACE_ENTRY_GROUP)
+
+    rdata = createRR(server.GetHostNameFqdn())
+    cname = encode_dns(cname)
+
+    group.AddRecord(avahi.IF_UNSPEC, avahi.PROTO_UNSPEC, dbus.UInt32(0),
+        cname, CLASS_IN, TYPE_CNAME, TTL, rdata)
+    group.Commit()
+
+
+def encode_dns(name):
+    out = []
+    for part in name.split('.'):
+        if len(part) == 0:
+            continue
+        out.append(ToASCII(part))
+    return b'.'.join(out)
+
+def createRR(name):
+    out = []
+    for part in name.split('.'):
+        if len(part) == 0:
+            continue
+        out.append(bytes([len(part)]))
+        out.append(ToASCII(part))
+    out.append(b'\0')
+    return b''.join(out)
+
+if __name__ == '__main__':
+    import time, sys, locale
+    if not sys.argv[1:] or '-h' in sys.argv:
+        show_help()
+        sys.exit(0)
+    if '-i' in sys.argv:
+        show_info()
+        sys.exit(0)
+    for arg in sys.argv[1:]:
+        parts = arg.split('.')
+        if parts[-1] != names.get('domain'):
+            print(f"DOMAIN_NAME_NOT_SUPPORTED ({arg} is not in .{names.get('domain')})")
+            sys.exit(1)
+        publish_cname(arg)
+        print(f"DOMAIN_ALIAS_ADDED ({arg} --> {names.get('fqdn')})")
+    while not exit:
+        time.sleep(60)

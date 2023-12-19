@@ -1,0 +1,29 @@
+#!/bin/bash
+set -e
+source $1
+
+echo Decompressing archive files
+
+mkdir -p $DECOMPRESSED_DIR
+for archive in $SOURCE_FILES; do
+    ext=$(echo $archive|rev|cut -d. -f1|rev)
+    ext2=$(echo $archive|rev|cut -d. -f2|rev)
+    if [ "x$ext" = "xzst" ]; then
+        command_decompress="tar --zstd -xf"
+    fi
+    if [ "x$ext" = "xtgz" -o "x$ext" = "xgz" ]; then
+        command_decompress="tar xfz"
+    fi
+    if [ "x$ext" = "xxz" -o "x$ext" = "xtxz" ]; then
+        command_decompress="tar --xz -xf"
+    fi
+    $command_decompress $SOURCE_DIR/$archive -C $DECOMPRESSED_DIR
+    linkname=$(echo $archive|sed -nr 's|([a-zA-Z-]+)-.*|\1|p')
+    dirname=$(basename $archive .$ext)
+    if [ "x$ext2" = "xtar" ];then
+        dirname=$(basename $dirname .$ext2)
+    fi
+    ln -s $dirname $DECOMPRESSED_DIR/$linkname
+done
+
+
