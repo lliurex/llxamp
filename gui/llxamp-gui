@@ -935,7 +935,7 @@ class MainApp(QtWidgets.QMainWindow):
         ]
         self.buttonToolbar.setButtons(buttons)
         if not is_installed:
-            for btn in self.buttonToolbar._buttons:
+            for btnname, btn in self.buttonToolbar._buttons.items():
                 if btn.objectName() != 'button_install':
                     btn.setDisabled(True)
         self.centralWidget().parent().addToolBar(QtCore.Qt.RightToolBarArea,self.buttonToolbar)
