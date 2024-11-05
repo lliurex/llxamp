@@ -23,7 +23,7 @@ import sys, os, re, glob
 
 BASEPATH=os.path.expanduser('~')+'/llxamp'
 if not os.path.exists(BASEPATH):
-    print(f"Error '{BASEPATH}' not found")
+    print(f"Error '{BASEPATH}' not found",file=sys.stderr)
     sys.exit(1)
 
 COMMENT_PHP = ';'
