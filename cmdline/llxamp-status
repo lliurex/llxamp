@@ -70,13 +70,19 @@ for param in "$@"; do
 done
 
 function check_running(){
-    ss -Htpnle |grep "uid:$(id -u)"|grep $1
+    if [ -n "$1" ]; then
+        ss -Htpnle |grep "uid:$(id -u)"|grep $1
+    fi
 }
 function check_ports(){
-    ss -Htpnle |grep "uid:$(id -u)"|grep $1|awk '{print $4}'|rev|cut -d':' -f1|rev|sort -n|xargs|tr ' ' ','
+    if [ -n "$1" ]; then
+        ss -Htpnle |grep "uid:$(id -u)"|grep $1|awk '{print $4}'|rev|cut -d':' -f1|rev|sort -n|xargs|tr ' ' ','
+    fi
 }
 function check_procs(){
-    ss -Htpnle |grep "uid:$(id -u)"|grep $1|awk '{print $6}'|egrep -o 'pid=[0-9]+'|cut -d'=' -f2|xargs|tr ' ' ','
+    if [ -n "$1" ]; then
+        ss -Htpnle |grep "uid:$(id -u)"|grep $1|awk '{print $6}'|egrep -o 'pid=[0-9]+'|cut -d'=' -f2|xargs|tr ' ' ','
+    fi
 }
 # Apache
 apache_running=
