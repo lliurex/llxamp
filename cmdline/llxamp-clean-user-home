@@ -19,9 +19,9 @@
 
 mountpoint=$HOME/llxamp
 lower=/usr/lib/llxamp/pack
-localmounts=$mountpoint/.llxamp
+localmounts=$HOME/.llxamp
 
 llxamp-user-umount
 [ -d "$localmounts/upper" ] && rm -rf "$localmounts/upper"
 [ -d "$localmounts/work" ] && rm -rf "$localmounts/work"
-[ -d "$mountpoint/llxamp" ] && rm -rf "$mountpoint/llxamp"
+[ -d "$mountpoint" ] && rm -rf "$mountpoint"
