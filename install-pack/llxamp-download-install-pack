@@ -33,6 +33,9 @@ CURL=$(which curl)
 SED=$(which sed) 
 MD5SUM=$(which md5sum)
 
+path=/usr/lib/llxamp
+source $path/environ
+
 mkdir -p "$TMPDIR"
 if [ -z "$NOCHECKSOURCES" ];then
     $CURL -s "$REPO/$MD5" -o "$TMPDIR/$MD5"
