@@ -19,7 +19,7 @@ SED=$(which sed)
 MD5SUM=$(which md5sum)
 
 mkdir -p "$TMPDIR"
-if [ -n "$NOCHECKSOURCES" ];then
+if [ -z "$NOCHECKSOURCES" ];then
     $CURL -s "$REPO/$MD5" -o "$TMPDIR/$MD5"
     FILES=$($SED -nr 's|\s+|,|gp' "$TMPDIR/$MD5"|cut -d',' -f2)
 fi
