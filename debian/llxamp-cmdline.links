@@ -17,3 +17,4 @@
 /usr/lib/llxamp/llxamp-show-vhosts /usr/bin/llxamp-show-vhosts
 /usr/lib/llxamp/llxamp-start-local-alias-vhosts /usr/bin/llxamp-start-local-alias-vhosts
 /usr/lib/llxamp/llxamp-stop-local-alias-vhosts /usr/bin/llxamp-stop-local-alias-vhosts
+/usr/lib/llxamp/llxamp-clean-user-home /usr/bin/llxamp-clear-user-home
