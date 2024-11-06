@@ -4,7 +4,8 @@ trap 'printf "\e[31m%s: %s\e[m\n" "Error downloading llxamp-sources!" $?' ERR
 
 script_dir=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 script_name="$(basename ${BASH_SOURCE[0]})"
-REPO=https://svnlliurexnet.gva.es/focal/llxamp-packages
+DISTRO=$(lsb_release -cs)
+REPO=https://svnlliurexnet.gva.es/$DISTRO/llxamp-packages
 TMPDIR="$1"
 TMPDIR=${TMPDIR:=/tmp/llxamp-sources}
 TMPDIR=$(realpath "$TMPDIR")
