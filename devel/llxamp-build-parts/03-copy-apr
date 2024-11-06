@@ -4,4 +4,4 @@ source $1
 
 echo Copying apr sources
 
-mv $DECOMPRESSED_DIR/apr* $DECOMPRESSED_DIR/httpd/srclib/
+mv -f $DECOMPRESSED_DIR/apr* $DECOMPRESSED_DIR/httpd/srclib/
