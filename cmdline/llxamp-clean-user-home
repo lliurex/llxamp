@@ -22,6 +22,6 @@ lower=/usr/lib/llxamp/pack
 localmounts=$mountpoint/.llxamp
 
 llxamp-user-umount
-[ -e "$localmounts/upper" ] && rm -rf "$localmounts/upper"
-[ -e "$localmounts/work" ] && rm -rf "$localmounts/work"
-[ -e "$mountpoint/llxamp" ] && rm -rf "$mountpoint/llxamp"
+[ -d "$localmounts/upper" ] && rm -rf "$localmounts/upper"
+[ -d "$localmounts/work" ] && rm -rf "$localmounts/work"
+[ -d "$mountpoint/llxamp" ] && rm -rf "$mountpoint/llxamp"
