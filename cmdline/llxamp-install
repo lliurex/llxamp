@@ -275,7 +275,7 @@ decompress_pack(){
     if [ -n "$mounted" ];then
         echo "$(gettext "Remount needed on"): '$rptarget'"
         echo "$(gettext "Killing procs using") '$rptarget'"
-        pids=$(lsof -u $(id -u)|grep "$HOME/llxamp"|awk '{print $2}'|sort|uniq|xargs)
+        pids=$(lsof -u $(id -u) 2>/dev/null |grep "$HOME/llxamp"|awk '{print $2}'|sort|uniq|xargs)
         if [ -n "$pids" ]; then
             echo "$(gettext "Detected pids") $pids"
             kill -9 $pids
