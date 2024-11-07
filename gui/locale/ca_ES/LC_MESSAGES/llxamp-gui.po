@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-07 15:23+0100\n"
-"PO-Revision-Date: 2024-11-07 15:33+0100\n"
+"POT-Creation-Date: 2024-11-07 16:03+0100\n"
+"PO-Revision-Date: 2024-11-07 16:21+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
@@ -76,7 +76,7 @@ msgstr "Arxiu"
 
 #: gui/llxamp-gui:257
 msgid "saved"
-msgstr "guardado"
+msgstr "guardat"
 
 #: gui/llxamp-gui:335
 msgid "Log viewer"
@@ -104,7 +104,7 @@ msgstr "Mostrar"
 
 #: gui/llxamp-gui:423
 msgid "Following logfile"
-msgstr "Seguint el fitxer de log"
+msgstr "Seguint log"
 
 #: gui/llxamp-gui:480
 msgid "Config files"
@@ -136,7 +136,7 @@ msgstr "Instal·lar"
 
 #: gui/llxamp-gui:921 gui/llxamp-gui:1277
 msgid "Reinstall"
-msgstr "Reinstal·lar"
+msgstr "Reinstalar"
 
 #: gui/llxamp-gui:926
 msgid "Browser"
@@ -212,11 +212,11 @@ msgstr "Arxiu per a desat"
 
 #: gui/llxamp-gui:1219
 msgid "Output from command"
-msgstr "Eixida del comando"
+msgstr "Eixida del comandament"
 
 #: gui/llxamp-gui:1225
 msgid "Error Output"
-msgstr "Eixida d'error"
+msgstr "Salida d'error"
 
 #: gui/llxamp-gui:1272
 msgid "Editing"
@@ -273,6 +273,66 @@ msgstr "Espera per favor"
 #: gui/llxamp-gui:1526
 msgid "Output:"
 msgstr "Eixida:"
+
+#: cmdline/llxamp-config.py:33
+msgid "Error"
+msgstr "Error"
+
+#: cmdline/llxamp-config.py:33
+msgid "not found"
+msgstr "no trobat"
+
+#: cmdline/llxamp-config.py:182
+msgid "End content from"
+msgstr "Final del contingut de"
+
+#: cmdline/llxamp-config.py:246
+msgid "usage"
+msgstr "ús"
+
+#: cmdline/llxamp-config.py:246
+msgid "Options"
+msgstr "Opcions"
+
+#: cmdline/llxamp-config.py:246
+msgid "Select Apache mode"
+msgstr "Seleccionar mode Apache"
+
+#: cmdline/llxamp-config.py:246
+msgid "Select PHP mode"
+msgstr "Seleccionar mode PHP"
+
+#: cmdline/llxamp-config.py:246
+msgid "Select MySQL mode"
+msgstr "Seleccionar mode MySQL"
+
+#: cmdline/llxamp-config.py:246
+msgid "This help"
+msgstr "Esta ajuda"
+
+#: cmdline/llxamp-config.py:246
+msgid "Show configfiles content"
+msgstr "Mostrar contingut de fitxers de configuració"
+
+#: cmdline/llxamp-config.py:246
+msgid "Show include tree hierarchy"
+msgstr "Mostrar arbre d'herència d'includes"
+
+#: cmdline/llxamp-config.py:246
+msgid "Show logfiles used"
+msgstr "Mostrar fitxers de log inclosos"
+
+#: cmdline/llxamp-config.py:246
+msgid "Remove comments from output"
+msgstr "Eliminar comentaris de l'eixida"
+
+#: cmdline/llxamp-config.py:246
+msgid "Include"
+msgstr "Incloure"
+
+#: cmdline/llxamp-config.py:246
+msgid "comments"
+msgstr "comentaris"
 
 #~ msgid "Editor button pressed"
 #~ msgstr "Botón de edición pulsado"
