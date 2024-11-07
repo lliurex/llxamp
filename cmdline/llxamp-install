@@ -21,6 +21,13 @@ export TEXTDOMAIN="llxamp-cmdline"
 
 source /usr/lib/llxamp/environ-cmdline
 
+file_pack=${file_pack:=$INSTALL_PACK_DIR/$PACKNAME}
+file_pack=${file_pack:=/tmp/llxamp-install-pack/install-pack.tgz}
+
+target=${target:=$TARGET_DIR}
+target=${target:=$HOME/llxamp}
+
+
 help_menu(){
     echo
     echo $(gettext "Usage"):
@@ -30,7 +37,7 @@ help_menu(){
     echo "  -h: $(gettext "this help")"
     echo "  $(gettext "defaults"):"
     echo "    <$(gettext "file_pack")>: $file_pack"
-    echo "    <$(gettext "target")>: $rptarget"
+    echo "    <$(gettext "target")>: $target"
     echo
 }
 
@@ -363,8 +370,6 @@ args="$@"
 nargs=$#
 TEMPLATES_DIR=${TEMPLATES_DIR:=$script_dir/templates}
 PACK_DIR=${PACK_DIR:=/usr/lib/llxamp/pack}
-file_pack=
-target=
 forced=
 while test -n "$1"; do
     param=$1
