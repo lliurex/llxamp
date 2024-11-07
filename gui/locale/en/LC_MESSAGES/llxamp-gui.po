@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-07 15:23+0100\n"
+"POT-Creation-Date: 2024-11-07 16:03+0100\n"
 "PO-Revision-Date: 2023-11-13 18:22+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -272,4 +272,64 @@ msgstr ""
 
 #: gui/llxamp-gui:1526
 msgid "Output:"
+msgstr ""
+
+#: cmdline/llxamp-config.py:33
+msgid "Error"
+msgstr ""
+
+#: cmdline/llxamp-config.py:33
+msgid "not found"
+msgstr ""
+
+#: cmdline/llxamp-config.py:182
+msgid "End content from"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "usage"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Options"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Select Apache mode"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Select PHP mode"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Select MySQL mode"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "This help"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Show configfiles content"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Show include tree hierarchy"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Show logfiles used"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Remove comments from output"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Include"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "comments"
 msgstr ""
