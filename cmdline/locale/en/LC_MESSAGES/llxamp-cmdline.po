@@ -1,0 +1,291 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-07 14:34+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: cmdline/llxamp-install:26 cmdline/llxamp-status:33
+#: cmdline/avahi-publish-domain-alias:57
+msgid "Usage"
+msgstr ""
+
+#: cmdline/llxamp-install:28 cmdline/llxamp-install:32
+msgid "file_pack"
+msgstr ""
+
+#: cmdline/llxamp-install:28 cmdline/llxamp-install:33
+msgid "target"
+msgstr ""
+
+#: cmdline/llxamp-install:29
+msgid "force overwrite target"
+msgstr ""
+
+#: cmdline/llxamp-install:30 cmdline/llxamp-status:40
+msgid "this help"
+msgstr ""
+
+#: cmdline/llxamp-install:31
+msgid "defaults"
+msgstr ""
+
+#: cmdline/llxamp-install:39 cmdline/llxamp-config.py:33
+msgid "Error"
+msgstr ""
+
+#: cmdline/llxamp-install:47 cmdline/llxamp-install:56
+#: cmdline/llxamp-install:65
+msgid "Error executing"
+msgstr ""
+
+#: cmdline/llxamp-install:47 cmdline/llxamp-install:56
+#: cmdline/llxamp-install:65
+msgid "aborting operation"
+msgstr ""
+
+#: cmdline/llxamp-install:95
+msgid "Patching text files"
+msgstr ""
+
+#: cmdline/llxamp-install:98 cmdline/llxamp-install:119
+#: cmdline/llxamp-install:150 cmdline/llxamp-install:299
+#: cmdline/llxamp-install:315 cmdline/llxamp-install:321
+msgid "invalid target"
+msgstr ""
+
+#: cmdline/llxamp-install:116
+msgid "Patching binary files"
+msgstr ""
+
+#: cmdline/llxamp-install:157
+msgid "Including PHP sample pages"
+msgstr ""
+
+#: cmdline/llxamp-install:164
+msgid "Configuring MariaDB"
+msgstr ""
+
+#: cmdline/llxamp-install:195
+msgid "Installing initial database"
+msgstr ""
+
+#: cmdline/llxamp-install:197
+msgid "Starting database"
+msgstr ""
+
+#: cmdline/llxamp-install:202
+msgid "Creating test table"
+msgstr ""
+
+#: cmdline/llxamp-install:204
+msgid "Securing Mysql installation"
+msgstr ""
+
+#: cmdline/llxamp-install:206
+msgid "Stopping database"
+msgstr ""
+
+#: cmdline/llxamp-install:215
+msgid "Writting start/stop scripts into"
+msgstr ""
+
+#: cmdline/llxamp-install:232
+msgid "Invalid parameter"
+msgstr ""
+
+#: cmdline/llxamp-install:247
+msgid "invalid install-pack"
+msgstr ""
+
+#: cmdline/llxamp-install:253
+msgid "found!"
+msgstr ""
+
+#: cmdline/llxamp-install:255
+msgid "not found!"
+msgstr ""
+
+#: cmdline/llxamp-install:265
+msgid "Mounting archive into"
+msgstr ""
+
+#: cmdline/llxamp-install:265
+msgid "with copy-on-write"
+msgstr ""
+
+#: cmdline/llxamp-install:268
+msgid "Remount needed on"
+msgstr ""
+
+#: cmdline/llxamp-install:269
+msgid "Killing procs using"
+msgstr ""
+
+#: cmdline/llxamp-install:272
+msgid "Detected pids"
+msgstr ""
+
+#: cmdline/llxamp-install:278
+msgid "Mounting"
+msgstr ""
+
+#: cmdline/llxamp-install:281 cmdline/llxamp-install:288
+msgid "Removing previous cow"
+msgstr ""
+
+#: cmdline/llxamp-install:291
+msgid "Can't mount overlay"
+msgstr ""
+
+#: cmdline/llxamp-install:300
+msgid "Reading tag"
+msgstr ""
+
+#: cmdline/llxamp-install:302
+msgid "Empty tag"
+msgstr ""
+
+#: cmdline/llxamp-install:307
+msgid "Configuring user path"
+msgstr ""
+
+#: cmdline/llxamp-install:344
+msgid "Finished!"
+msgstr ""
+
+#: cmdline/llxamp-install:346
+msgid "Start services with:"
+msgstr ""
+
+#: cmdline/llxamp-install:348
+msgid "View initial page served with:"
+msgstr ""
+
+#: cmdline/llxamp-install:350
+msgid "View with SSL phpMyAdmin initial page with:"
+msgstr ""
+
+#: cmdline/llxamp-install:352
+msgid "Stop services with:"
+msgstr ""
+
+#: cmdline/llxamp-install:354
+msgid "View more scripts pressing bash autocompletion keys:"
+msgstr ""
+
+#: cmdline/llxamp-install:407
+msgid "exists"
+msgstr ""
+
+#: cmdline/llxamp-install:407
+msgid "must be non-existent directory"
+msgstr ""
+
+#: cmdline/llxamp-install:414
+msgid "Invalid pack file"
+msgstr ""
+
+#: cmdline/llxamp-status:36
+msgid "select apache status"
+msgstr ""
+
+#: cmdline/llxamp-status:37
+msgid "select mysql status"
+msgstr ""
+
+#: cmdline/llxamp-status:38
+msgid "show using procs"
+msgstr ""
+
+#: cmdline/llxamp-status:39
+msgid "show using ports"
+msgstr ""
+
+#: cmdline/avahi-publish-domain-alias:36
+msgid "Exiting"
+msgstr ""
+
+#: cmdline/avahi-publish-domain-alias:57 cmdline/llxamp-config.py:246
+msgid "Options"
+msgstr ""
+
+#: cmdline/avahi-publish-domain-alias:57
+msgid "Show info"
+msgstr ""
+
+#: cmdline/avahi-publish-domain-alias:57 cmdline/llxamp-config.py:246
+msgid "This help"
+msgstr ""
+
+#: cmdline/avahi-publish-domain-alias:57
+msgid "Parameters"
+msgstr ""
+
+#: cmdline/avahi-publish-domain-alias:57
+msgid "any string"
+msgstr ""
+
+#: cmdline/avahi-publish-domain-alias:106
+msgid "is not in"
+msgstr ""
+
+#: cmdline/llxamp-config.py:33
+msgid "not found"
+msgstr ""
+
+#: cmdline/llxamp-config.py:182
+msgid "End content from"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "usage"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Select Apache mode"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Select PHP mode"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Select MySQL mode"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Show configfiles content"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Show include tree hierarchy"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Show logfiles used"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Remove comments from output"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "Include"
+msgstr ""
+
+#: cmdline/llxamp-config.py:246
+msgid "comments"
+msgstr ""

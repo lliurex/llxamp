@@ -21,9 +21,16 @@
 
 import sys, os, re, glob
 
+import gettext, locale
+from gettext import gettext as _
+
+gettext.bindtextdomain('llxamp-cmdline','/usr/share/locale')
+gettext.textdomain('llxamp-cmdline')
+locale = locale.getlocale()[0]
+
 BASEPATH=os.path.expanduser('~')+'/llxamp'
 if not os.path.exists(BASEPATH):
-    print(f"Error '{BASEPATH}' not found",file=sys.stderr)
+    print(_("Error"),BASEPATH,_("not found"),file=sys.stderr)
     sys.exit(1)
 
 COMMENT_PHP = ';'
@@ -172,7 +179,8 @@ def process_includes(filename,hierarchy={},includes=[],content=[],logs=[]):
             for include in newincludes:
                 if include not in includes:
                     process_includes(include,hierarchy[filename],includes,content,logs)
-    content.append(f'{COMMENT_LLXAMP}End content from: {filename}')
+    tr=_('End content from')
+    content.append(f'{COMMENT_LLXAMP}{tr}: {filename}')
     return hierarchy,includes,content,logs
 
 def print_hierarchy(hierarchy={},comments=False,level=0):
@@ -235,21 +243,7 @@ def print_logs(loglist,comments=False):
 
 def help_menu():
     filename = os.path.basename(__file__)
-    print(f'''{filename} usage:
-{filename} [ -a [-c|-t] | -p [-c|-t] | -m [ -c|-t ] | -h ] [-r] [-i]
-Options:
-    -a: Select Apache mode
-    -p: Select PHP mode
-    -m: Select MySQL mode
-    -h: This help
-
-    -c: Show configfiles content
-    -t: Show include tree hierarchy
-    -l: Show logfiles used
-
-    -r: Remove comments from output
-    -i: Include {filename} comments
-''')
+    print("{} {}:\n{} [ -a [-c|-t] | -p [-c|-t] | -m [ -c|-t ] | -h ] [-r] [-i]\n{}:\n    -a: {}\n    -p: {}\n    -m: {}\n    -h: {}\n\n    -c: {}\n    -t: {}\n    -l: {}\n\n    -r: {}\n    -i: {} {} {}\n".format(filename,_('usage'),filename,_('Options'),_('Select Apache mode'),_('Select PHP mode'),_('Select MySQL mode'),_('This help'),_('Show configfiles content'),_('Show include tree hierarchy'),_('Show logfiles used'),_('Remove comments from output'),_('Include'),filename,_('comments')))
 
 def fix_config_dir():
     global config_dir
@@ -314,7 +308,7 @@ def set_mode_mysql():
 if __name__ == '__main__':
     params = sys.argv
 
-    if '-h' in params:
+    if '-h' in params or '--help' in params:
         help_menu()
         sys.exit(0)
 

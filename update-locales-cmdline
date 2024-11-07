@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+SHELLFILES="cmdline/llxamp-install cmdline/llxamp-ports cmdline/llxamp-status cmdline/llxamp-user-mount"
+PYFILES="cmdline/avahi-publish-domain-alias cmdline/llxamp-config.py"
+
+xgettext -L Shell -o cmdline/locale/llxamp-cmdline.pot $SHELLFILES
+xgettext -L Python -j --keyword --keyword=_ -o cmdline/locale/llxamp-cmdline.pot $PYFILES
+find cmdline -name '*.po' -exec msgmerge --update {} cmdline/locale/llxamp-cmdline.pot \; > /dev/null 2>&1
+poedit cmdline/locale/es_ES/LC_MESSAGES/llxamp-cmdline.po > /dev/null 2>&1
+python3 po-to-valencian.py cmdline/locale/es_ES/LC_MESSAGES/llxamp-cmdline.po > cmdline/locale/ca_ES/LC_MESSAGES/llxamp-cmdline.po
+poedit cmdline/locale/ca_ES/LC_MESSAGES/llxamp-cmdline.po
+
