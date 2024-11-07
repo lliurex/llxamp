@@ -27,7 +27,6 @@ file_pack=${file_pack:=/tmp/llxamp-install-pack/install-pack.tgz}
 target=${target:=$TARGET_DIR}
 target=${target:=$HOME/llxamp}
 
-
 help_menu(){
     echo
     echo $(gettext "Usage"):
@@ -117,13 +116,14 @@ make_change_text(){
     done
     find $rptarget -name '*.pre-change' -exec rm {} \;
     popd > /dev/null
+    export LC_ALL=
 }
 
 make_change_bin(){
     echo $(gettext "Patching binary files")
     export LC_ALL=C
     components="httpd php"
-    [ ! -e "$rptarget" ] && error_menu "$(gettext "invalid target")"
+    [ ! -e "$rptarget" ] && export LC_ALL="" && error_menu "$(gettext "invalid target")"
     pushd $rptarget >/dev/null
     declare -a found_bins_with_tag
     for component in $components; do
@@ -151,6 +151,7 @@ make_change_bin(){
     done
 
     popd > /dev/null
+    export LC_ALL=
 }
 
 write_httpd_conf(){
@@ -355,7 +356,7 @@ print_info(){
     echo $(gettext "View initial page served with:")
     echo '  $ llxamp-open-browser'
     echo $(gettext "View with SSL phpMyAdmin initial page with:")
-    echo '  $ llxamp-open-browser-ssl /phpMyAdmin/index.php  #(default_username=root, default_root password=root)'
+    echo '  $ llxamp-open-browser-ssl /phpMyAdmin/index.php  #(default_username=root, default_root_password=root)'
     echo $(gettext "Stop services with:")
     echo '  $ llxamp-stop'
     echo $(gettext "View more scripts pressing bash autocompletion keys:")
