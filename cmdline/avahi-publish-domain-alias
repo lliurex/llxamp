@@ -19,14 +19,21 @@
  along with LLXAMP.  If not, see <http://www.gnu.org/licenses/>.
 """
 
-import os, avahi, dbus, signal
+import os, avahi, dbus, signal, sys
 from encodings.idna import ToASCII
+
+import gettext, locale
+from gettext import gettext as _
+
+gettext.bindtextdomain('llxamp-cmdline','/usr/share/locale')
+gettext.textdomain('llxamp-cmdline')
+locale = locale.getlocale()[0]
 
 exit = False
 def exit_now(*args):
     global exit
     exit = True
-    print("Exiting")
+    print(_("Exiting"))
     sys.exit(0)
 
 signal.signal(signal.SIGINT,exit_now)
@@ -47,16 +54,7 @@ names = get_names()
 
 def show_help():
     filename = os.path.basename(__file__)
-    print(f'''Usage:
-    {filename} [ -i ] | [<alias> ... <alias>]
-        Options:
-            -i : Show info
-            -h : This help
-        Parameters:
-            <alias> = <hostname>.<avahi_domain>
-            <hostname> : any string
-            <avahi_domain> = {names.get('domain')}
-''')
+    print("{}:\n{} [ -i ] | [<alias> ... <alias>]\n        {}:\n            -i : {}\n            -h : {}\n        {}\n            <alias> = <hostname>.<avahi_domain>\n            <hostname> : {}\n            <avahi_domain> = {}\n".format(_('Usage'),filename,_('Options'),_('Show info'),_('This help'),_('Parameters'),_('any string'),names.get('domain')))
 
 def show_info():
     print(f'''HOSTNAME={names.get('hostname')}\nDOMAIN={names.get('domain')}\nFQDN={names.get('fqdn')}''')
@@ -105,9 +103,9 @@ if __name__ == '__main__':
     for arg in sys.argv[1:]:
         parts = arg.split('.')
         if parts[-1] != names.get('domain'):
-            print(f"DOMAIN_NAME_NOT_SUPPORTED ({arg} is not in .{names.get('domain')})")
+            print("DOMAIN_NAME_NOT_SUPPORTED ({} {} .{})".format(arg,_('is not in'),names.get('domain')))
             sys.exit(1)
         publish_cname(arg)
-        print(f"DOMAIN_ALIAS_ADDED ({arg} --> {names.get('fqdn')})")
+        print("DOMAIN_ALIAS_ADDED ({arg} --> {names.get('fqdn')})")
     while not exit:
         time.sleep(60)

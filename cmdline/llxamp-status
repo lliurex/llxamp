@@ -17,6 +17,8 @@
 # You should have received a copy of the GNU General Public License
 # along with LLXAMP.  If not, see <http://www.gnu.org/licenses/>.
 
+export TEXTDOMAIN="llxamp-cmdline"
+
 program=$(basename "${BASH_SOURCE[0]}")
 
 if [ -e "$HOME/llxamp/mysql" ]; then
@@ -28,14 +30,14 @@ fi
 
 show_help(){
     echo
-    echo "Usage:"
+    echo "$(gettext "Usage"):"
     echo
     echo "$program [ -a | -m ] [ -p | -n ] [ -h ]"
-    echo "  -a: select apache status"
-    echo "  -m: select mysql status"
-    echo "  -n: show using procs"
-    echo "  -u: show using ports"
-    echo "  -h: this help"
+    echo "  -a: $(gettext "select apache status")"
+    echo "  -m: $(gettext "select mysql status")"
+    echo "  -n: $(gettext "show using procs")"
+    echo "  -u: $(gettext "show using ports")"
+    echo "  -h: $(gettext "this help")"
     echo
 }
 

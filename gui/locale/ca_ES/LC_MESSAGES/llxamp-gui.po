@@ -7,250 +7,270 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-22 12:23+0100\n"
-"PO-Revision-Date: 2023-11-22 12:23+0100\n"
+"POT-Creation-Date: 2024-11-07 15:23+0100\n"
+"PO-Revision-Date: 2024-11-07 15:33+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.3\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
 
-#: gui/llxamp-gui:55
+#: gui/llxamp-gui:57
 msgid "Can't import"
 msgstr "No es pot importar"
 
-#: gui/llxamp-gui:63
+#: gui/llxamp-gui:65
 msgid "Ending QApplication"
-msgstr "Terminando aplicación"
+msgstr "Acabant aplicació"
 
-#: gui/llxamp-gui:131
+#: gui/llxamp-gui:105
+msgid "Setting global variable from preferences file:"
+msgstr "Ajustant variable global des de fitxer de preferències:"
+
+#: gui/llxamp-gui:140
 msgid "Empty filename"
-msgstr "Nom de fitxer vacio"
+msgstr "Nom de fitxer buit"
 
-#: gui/llxamp-gui:141
+#: gui/llxamp-gui:150
 msgid "Restore initial file"
-msgstr "Restaurar fitxer inicial"
+msgstr "Restaurar fitxer d'inici"
 
-#: gui/llxamp-gui:141
+#: gui/llxamp-gui:150
 msgid "Undo"
 msgstr "Desfer"
 
-#: gui/llxamp-gui:141
+#: gui/llxamp-gui:150
 msgid "Redo"
 msgstr "Refer"
 
-#: gui/llxamp-gui:141 gui/llxamp-gui:1369
+#: gui/llxamp-gui:150 gui/llxamp-gui:1388
 msgid "Save"
 msgstr "Guardar"
 
-#: gui/llxamp-gui:141
+#: gui/llxamp-gui:150
 msgid "Open with system editor"
 msgstr "Obrir amb editor extern"
 
-#: gui/llxamp-gui:198
+#: gui/llxamp-gui:207
 msgid "Save file"
-msgstr "Guardar fitxer"
+msgstr "Desar fitxer"
 
-#: gui/llxamp-gui:199
+#: gui/llxamp-gui:208
 msgid "Do you want to save?"
-msgstr "¿Desea guardar?"
+msgstr "Desitja guardar?"
 
-#: gui/llxamp-gui:212
+#: gui/llxamp-gui:221
 msgid "Restore file"
 msgstr "Restaurar fitxer"
 
-#: gui/llxamp-gui:213
+#: gui/llxamp-gui:222
 msgid "Do you want restore original file?"
-msgstr "¿Desea restaurar el fichero original?"
+msgstr "Desitja restaurar el fitxer original?"
 
-#: gui/llxamp-gui:248
+#: gui/llxamp-gui:257
 msgid "File"
 msgstr "Arxiu"
 
-#: gui/llxamp-gui:248
+#: gui/llxamp-gui:257
 msgid "saved"
 msgstr "guardado"
 
-#: gui/llxamp-gui:326
+#: gui/llxamp-gui:335
 msgid "Log viewer"
 msgstr "Visor de logs"
 
-#: gui/llxamp-gui:336
+#: gui/llxamp-gui:345
 msgid "Clear"
 msgstr "Netejar"
 
-#: gui/llxamp-gui:342 gui/llxamp-gui:376
+#: gui/llxamp-gui:351 gui/llxamp-gui:386
 msgid "Hide"
 msgstr "Amagar"
 
-#: gui/llxamp-gui:374
+#: gui/llxamp-gui:375
+msgid "Logviewer configured with:"
+msgstr "Visor de log configurat amb:"
+
+#: gui/llxamp-gui:375
+msgid "lines"
+msgstr "línies"
+
+#: gui/llxamp-gui:384
 msgid "Show"
 msgstr "Mostrar"
 
-#: gui/llxamp-gui:413
+#: gui/llxamp-gui:423
 msgid "Following logfile"
-msgstr "Seguint log"
+msgstr "Seguint el fitxer de log"
 
-#: gui/llxamp-gui:470
+#: gui/llxamp-gui:480
 msgid "Config files"
 msgstr "Fitxers configuració"
 
-#: gui/llxamp-gui:471
+#: gui/llxamp-gui:481
 msgid "Log files"
 msgstr "Fitxers log"
 
-#: gui/llxamp-gui:634 gui/llxamp-gui:1514
+#: gui/llxamp-gui:644 gui/llxamp-gui:1584
 msgid "Already running"
-msgstr "Ya funcionando"
+msgstr "Ja funcionant"
 
-#: gui/llxamp-gui:649
+#: gui/llxamp-gui:659
 msgid "Error executing script"
 msgstr "Error executant script"
 
-#: gui/llxamp-gui:722
+#: gui/llxamp-gui:732
 msgid "Not running"
 msgstr "Parat"
 
-#: gui/llxamp-gui:908 gui/llxamp-gui:1264
+#: gui/llxamp-gui:915
+msgid "Default font selected:"
+msgstr "Font per defecte seleccionada:"
+
+#: gui/llxamp-gui:919 gui/llxamp-gui:1275
 msgid "Install"
 msgstr "Instal·lar"
 
-#: gui/llxamp-gui:910 gui/llxamp-gui:1266
+#: gui/llxamp-gui:921 gui/llxamp-gui:1277
 msgid "Reinstall"
 msgstr "Reinstal·lar"
 
-#: gui/llxamp-gui:915
+#: gui/llxamp-gui:926
 msgid "Browser"
 msgstr "Navegador"
 
-#: gui/llxamp-gui:916
+#: gui/llxamp-gui:927
 msgid "Secure browser"
 msgstr "Navegador segur"
 
-#: gui/llxamp-gui:917
+#: gui/llxamp-gui:928
 msgid "PhpMyAdmin"
 msgstr "PhpMyAdmin"
 
-#: gui/llxamp-gui:918
+#: gui/llxamp-gui:929
 msgid "Used ports"
 msgstr "Ports en ús"
 
-#: gui/llxamp-gui:919
+#: gui/llxamp-gui:930
 msgid "Available ports"
 msgstr "Ports disponibles"
 
-#: gui/llxamp-gui:920
+#: gui/llxamp-gui:931
 msgid "Make backup"
 msgstr "Còpia de seguretat"
 
-#: gui/llxamp-gui:921 gui/llxamp-gui:922
+#: gui/llxamp-gui:932 gui/llxamp-gui:933
 msgid "Show config"
 msgstr "Mostrar configuració"
 
-#: gui/llxamp-gui:944
+#: gui/llxamp-gui:955
 msgid "Close tab"
 msgstr "Tancar pestanya"
 
-#: gui/llxamp-gui:945
+#: gui/llxamp-gui:956
 msgid "Do you want close the tab?"
-msgstr "¿Desea cerrar la pestaña?"
+msgstr "Desitja tancar la pestanya?"
 
-#: gui/llxamp-gui:950
+#: gui/llxamp-gui:961
 msgid "Close tab:"
 msgstr "Tancar pestanya:"
 
-#: gui/llxamp-gui:979 gui/llxamp-gui:1256
+#: gui/llxamp-gui:990 gui/llxamp-gui:1267
 msgid "Preferences"
 msgstr "Preferències"
 
-#: gui/llxamp-gui:979 gui/llxamp-gui:1254
+#: gui/llxamp-gui:990 gui/llxamp-gui:1265
 msgid "Exit"
 msgstr "Eixir"
 
-#: gui/llxamp-gui:998
+#: gui/llxamp-gui:1009
 msgid "Help"
 msgstr "Ajuda"
 
-#: gui/llxamp-gui:998
+#: gui/llxamp-gui:1009
 msgid "About"
 msgstr "Sobre"
 
-#: gui/llxamp-gui:1137
+#: gui/llxamp-gui:1148
 msgid "Tab created"
 msgstr "Pestanya creada"
 
-#: gui/llxamp-gui:1153
+#: gui/llxamp-gui:1164
 msgid "Unknown type action triggered"
 msgstr "Activada una acció desconeguda"
 
-#: gui/llxamp-gui:1166
+#: gui/llxamp-gui:1177
 msgid "Archive files"
 msgstr "Fitxers comprimits"
 
-#: gui/llxamp-gui:1167
+#: gui/llxamp-gui:1178
 msgid "File to save"
-msgstr "Arxiu per a guardat"
+msgstr "Arxiu per a desat"
 
-#: gui/llxamp-gui:1208
+#: gui/llxamp-gui:1219
 msgid "Output from command"
 msgstr "Eixida del comando"
 
-#: gui/llxamp-gui:1214
+#: gui/llxamp-gui:1225
 msgid "Error Output"
 msgstr "Eixida d'error"
 
-#: gui/llxamp-gui:1261
+#: gui/llxamp-gui:1272
 msgid "Editing"
 msgstr "Editant"
 
-#: gui/llxamp-gui:1272
+#: gui/llxamp-gui:1283
 msgid "Do you want"
-msgstr "¿Desea"
+msgstr "Desitja"
 
-#: gui/llxamp-gui:1274
+#: gui/llxamp-gui:1285
 msgid "All content from:"
-msgstr "Todo el contenido de:"
+msgstr "Tot el contingut de:"
 
-#: gui/llxamp-gui:1278
+#: gui/llxamp-gui:1289
 msgid "Will be removed!"
 msgstr "Serà esborrat!"
 
-#: gui/llxamp-gui:1297 gui/llxamp-gui:1307
+#: gui/llxamp-gui:1308 gui/llxamp-gui:1318
 msgid "All configuration from"
 msgstr "Configuració completa de"
 
-#: gui/llxamp-gui:1309 gui/llxamp-gui:1367 gui/llxamp-gui:1449
+#: gui/llxamp-gui:1320 gui/llxamp-gui:1384 gui/llxamp-gui:1519
 msgid "Close"
 msgstr "Tancar"
 
-#: gui/llxamp-gui:1355
+#: gui/llxamp-gui:1371
 msgid "Font:"
 msgstr "Font:"
 
-#: gui/llxamp-gui:1365
+#: gui/llxamp-gui:1380
 msgid "Change font"
 msgstr "Canviar font"
 
-#: gui/llxamp-gui:1374
+#: gui/llxamp-gui:1395
+msgid "Maximum log history:"
+msgstr "Historial màxim de log:"
+
+#: gui/llxamp-gui:1449
 msgid "Select font"
 msgstr "Seleccionar font"
 
-#: gui/llxamp-gui:1422
+#: gui/llxamp-gui:1492
 msgid "Installing"
 msgstr "Instal·lant"
 
-#: gui/llxamp-gui:1425
+#: gui/llxamp-gui:1495
 msgid "Reinstalling"
 msgstr "Reinstal·lant"
 
-#: gui/llxamp-gui:1428
+#: gui/llxamp-gui:1498
 msgid "Please wait"
 msgstr "Espera per favor"
 
-#: gui/llxamp-gui:1456
+#: gui/llxamp-gui:1526
 msgid "Output:"
 msgstr "Eixida:"
 
