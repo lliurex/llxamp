@@ -24,7 +24,7 @@ BUILDDIR=/LLXXAMPP
 TAG=$BUILDDIR/123456789123456789123456789123456789123456789
 DEFAULT_PORT=8080
 DEFAULT_SSL_PORT=8443
-PACKNAME=$(PACKNAME=$(grep -v '#' /usr/lib/llxamp/files | grep -iv 'md5'))
+PACKNAME=$(grep -v '#' /usr/lib/llxamp/files | grep -iv 'md5')
 EXT=$(echo $PACKNAME|rev|cut -d. -f1|rev)
 if [ "x$ext" = "xzst" ]; then
     COMMAND_TEST="tar --zstd -tf"
