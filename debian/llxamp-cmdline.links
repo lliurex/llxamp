@@ -18,3 +18,4 @@
 /usr/lib/llxamp/llxamp-start-local-alias-vhosts /usr/bin/llxamp-start-local-alias-vhosts
 /usr/lib/llxamp/llxamp-stop-local-alias-vhosts /usr/bin/llxamp-stop-local-alias-vhosts
 /usr/lib/llxamp/llxamp-clean-user-home /usr/bin/llxamp-clear-user-home
+/usr/share/locale/ca_ES/LC_MESSAGES/llxamp-cmdline.mo /usr/share/locale/ca/LC_MESSAGES/llxamp-cmdline.mo
