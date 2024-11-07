@@ -1,2 +1,5 @@
 cmdline/*  usr/lib/llxamp/
 cmdline/xdg/autostart/* etc/xdg/autostart/
+cmdline/locale/es_ES/LC_MESSAGES/*.mo usr/share/locale/es_ES/LC_MESSAGES/
+cmdline/locale/ca_ES/LC_MESSAGES/*.mo usr/share/locale/ca_ES/LC_MESSAGES/
+cmdline/locale/en/LC_MESSAGES/*.mo usr/share/locale/en/LC_MESSAGES/
