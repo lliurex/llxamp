@@ -1,3 +1,9 @@
+llxamp (0.2) noble; urgency=medium
+
+  * Initial release
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Mon, 11 Nov 2024 14:08:39 +0100
+
 llxamp (0.2) jammy; urgency=medium
 
   * Initial release for jammy
