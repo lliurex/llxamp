@@ -27,7 +27,7 @@ REPO=https://svnlliurexnet.gva.es/$DISTRO/llxamp-packages
 TMPDIR="$1"
 TMPDIR=${TMPDIR:=/tmp/llxamp-install-pack}
 TMPDIR=$(realpath "$TMPDIR")
-MD5=${MD5:=install-pack-jammy.tar.zst.md5}
+MD5=${MD5:=install-pack-$DISTRO.tar.zst.md5}
 FILES=$(grep -v '#' /usr/lib/llxamp/files|grep -v '.md5')
 CURL=$(which curl)
 SED=$(which sed) 
