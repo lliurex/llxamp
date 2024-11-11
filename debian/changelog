@@ -1,3 +1,9 @@
+llxamp (0.2.1) noble; urgency=medium
+
+  * Fix dependency with llxamp-devel
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Mon, 11 Nov 2024 19:06:17 +0100
+
 llxamp (0.2) noble; urgency=medium
 
   * Initial release
