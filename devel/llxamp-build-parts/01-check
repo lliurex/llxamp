@@ -8,11 +8,15 @@ echo "Checking files integrity"
 [ -e "$1" ] || ( echo Invalid environ file && exit 1 )
 source $1
 
+out=/dev/null
+if [ -n "$DEBUG" ];then
+    out=/dev/stdout
+fi
 SOURCES_DIR=${SOURCES_DIR:=/tmp/llxamp-sources}
 SOURCESMD5FILE=$(grep -v '#' /usr/lib/llxamp/sources/files|grep -i 'md5')
 
 pushd "$SOURCES_DIR" > /dev/null 2>&1
-md5sum -c "$SOURCES_DIR/$SOURCESMD5FILE" > /dev/null
+md5sum -c "$SOURCES_DIR/$SOURCESMD5FILE" > $out
 popd > /dev/null 2>&1
 
 if [ -e "$INSTALL_PACK_DIR/$PACKNAME" ]; then

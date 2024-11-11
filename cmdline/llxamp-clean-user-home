@@ -17,21 +17,11 @@
 # You should have received a copy of the GNU General Public License
 # along with LLXAMP.  If not, see <http://www.gnu.org/licenses/>.
 
+mountpoint=$HOME/llxamp
+lower=/usr/lib/llxamp/pack
+localmounts=$HOME/.llxamp
 
-INSTALL_PACK_DIR=/tmp/llxamp-install-pack
-DECOMPRESSED_PACK_DIR=/usr/lib/llxamp/pack
-BUILDDIR=/LLXXAMPP
-TAG=$BUILDDIR/123456789123456789123456789123456789123456789
-DEFAULT_PORT=8080
-DEFAULT_SSL_PORT=8443
-PACKNAME=$(grep -v '#' /usr/lib/llxamp/files | grep -iv 'md5')
-EXT=$(echo $PACKNAME|rev|cut -d. -f1|rev)
-if [ "x$ext" = "xzst" ]; then
-    COMMAND_TEST="tar --zstd -tf"
-    COMMAND_DECOMPRESS="tar --zstd -xf"
-    NEED="build-tag httpd php mariadb httpd/htdocs/phpMyAdmin"
-else
-    COMMAND_TEST="tar -ztf"
-    COMMAND_DECOMPRESS="tar xfz"
-    NEED="./build-tag ./httpd ./php ./mysql ./httpd/htdocs/phpMyAdmin"
-fi
+llxamp-user-umount
+[ -d "$localmounts/upper" ] && rm -rf "$localmounts/upper"
+[ -d "$localmounts/work" ] && rm -rf "$localmounts/work"
+[ -d "$mountpoint" ] && rm -rf "$mountpoint"

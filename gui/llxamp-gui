@@ -41,10 +41,6 @@ fontfamily = ['Hack','Courier New','monospace']
 fontfamily = ['Ubuntu Mono','Hack','Courier New','monospace']
 fontpointsize = 12
 
-gettext.bindtextdomain('llxamp-gui','/usr/share/locale')
-gettext.textdomain('llxamp-gui')
-locale = locale.getlocale()[0]
-
 from PySide2 import QtWidgets, QtGui, QtCore
 
 sys.path.insert(1,'/usr/lib/llxamp')
@@ -55,6 +51,10 @@ try:
 except:
     llxconfig=None
     print(_("Can't import") + ' llxamp-config')
+
+gettext.bindtextdomain('llxamp-gui','/usr/share/locale')
+gettext.textdomain('llxamp-gui')
+locale = locale.getlocale()[0]
 
 app = None
 exitting = False
@@ -1349,7 +1349,7 @@ class MainApp(QtWidgets.QMainWindow):
 
         filename = f'/usr/share/doc/llxamp-gui/llxamp-gui-about-{locale}.md'
         if not os.path.exists(filename):
-            filename = f'/usr/share/doc/llxamp-gui/llxamp-gui-about-en.md'
+            filename = f'/usr/share/doc/llxamp-gui/llxamp-gui-about-en_US.md'
         with open(filename,'r') as fp:
             txt = fp.read()
         text.setMarkdown(txt)
