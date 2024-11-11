@@ -1,3 +1,9 @@
+llxamp (0.2) focal; urgency=medium
+
+  * Fixes & documentation
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Mon, 11 Nov 2024 13:36:22 +0100
+
 llxamp (0.1) focal; urgency=medium
 
   * Initial Release.
