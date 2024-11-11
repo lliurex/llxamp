@@ -1,3 +1,9 @@
+llxamp (0.2.1) jammy; urgency=medium
+
+  * Fix llxamp-devel dependency
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Mon, 11 Nov 2024 19:19:33 +0100
+
 llxamp (0.2) jammy; urgency=medium
 
   * Initial release for jammy
