@@ -1,3 +1,10 @@
+llxamp (0.2.2) jammy; urgency=medium
+
+  * Add dependencies
+  * Move patch.py into llxamp-cmdline
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Wed, 13 Nov 2024 18:04:37 +0100
+
 llxamp (0.2.1) jammy; urgency=medium
 
   * Fix llxamp-devel dependency
