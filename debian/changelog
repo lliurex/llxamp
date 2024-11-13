@@ -1,3 +1,10 @@
+llxamp (0.2.2) noble; urgency=medium
+
+  * Add dependencies for llxamp-cmdline
+  * Move patch.py to llxamp-cmdline
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Wed, 13 Nov 2024 18:26:25 +0100
+
 llxamp (0.2.1) noble; urgency=medium
 
   * Fix dependency with llxamp-devel
