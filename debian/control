@@ -55,7 +55,6 @@ Depends: ${misc:Depends},
   libxslt1.1,
   libzip4,
   libzstd1
-
 Description: LLXAMP install Apache+PHP+MariaDB+PHPMyAdmin instances in user's homedir
  This package contains cmdline scripts
 
