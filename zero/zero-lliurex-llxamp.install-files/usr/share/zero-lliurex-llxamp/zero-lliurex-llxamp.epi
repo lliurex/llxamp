@@ -4,7 +4,7 @@
         {"name":"llxamp-cmdline","custom_name":"LliureX Apache+Mysql+PHP (Command-line-only)","custom_icon":"llxamp.png","type":"apt","key_store":"llxamp-cmdline","addRepoKeys":false,"getStatus":false,"remove":true,"installPackage":false,"download":false,"preInstall":false,"postInstall":false},
         {"name":"llxamp-gui","custom_name":"LliureX Apache+Mysql+PHP (Graphical-user-interface)","custom_icon":"llxamp.png","type":"apt","key_store":"llxamp-gui","addRepoKeys":false,"getStatus":false,"remove":true,"installPackage":false,"download":false,"preInstall":false,"postInstall":false}
     ],
-    "repository": [],
+    "repository": [{"url":"deb http://archive.ubuntu.com/ubuntu focal main universe multiverse"}],
     "script": {"name":"/usr/share/zero-lliurex-llxamp/zero-lliurex-llxamp_script", "remove":true,"download":true,"getStatus":true},
     "zomando":"zero-lliurex-llxamp",
     "custom_icon_path":"/usr/share/zero-lliurex-llxamp/",
