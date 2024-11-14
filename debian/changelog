@@ -1,3 +1,9 @@
+llxamp (0.2.3) noble; urgency=medium
+
+  * Use ubuntu repo
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Wed, 13 Nov 2024 20:38:37 +0100
+
 llxamp (0.2.2) noble; urgency=medium
 
   * Add dependencies for llxamp-cmdline
