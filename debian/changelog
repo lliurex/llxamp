@@ -1,3 +1,9 @@
+llxamp (0.2.3) focal; urgency=medium
+
+  * Use Ubuntu repo into zero-lliurex-llxamp.epi
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Thu, 14 Nov 2024 12:03:10 +0100
+
 llxamp (0.2.2) focal; urgency=medium
 
   * Add dependencies for llxamp-cmdline
