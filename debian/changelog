@@ -1,3 +1,9 @@
+llxamp (0.2.4) focal; urgency=medium
+
+  * Fix ssl hardcoded paths
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Fri, 16 May 2025 09:19:21 +0200
+
 llxamp (0.2.3) focal; urgency=medium
 
   * Use Ubuntu repo into zero-lliurex-llxamp.epi
