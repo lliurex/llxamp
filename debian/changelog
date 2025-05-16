@@ -1,3 +1,9 @@
+llxamp (0.2.4) jammy; urgency=medium
+
+  * Fix ssl hardcoded paths
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Fri, 16 May 2025 09:21:41 +0200
+
 llxamp (0.2.3) jammy; urgency=medium
 
   * Use Ubuntu repo during epi packages installation
