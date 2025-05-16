@@ -57,7 +57,7 @@ done;
 
 llxamp-mysqldump --all-databases --add-drop-database --add-drop-table --add-locks --all-tablespaces --comments --complete-insert --dump-date --extended-insert --flush-logs --flush-privileges --routines --triggers --user root > backup-mysql.sql
 
-kill $(cat /home/lliurex/llxamp/mysql/temp/mysql.pid)
+kill $(cat $HOME/llxamp/mysql/temp/mysql.pid)
 
 if [ "x$MYSQL_RUNNING" == "x1" ];then
     llxamp-start-mysql
