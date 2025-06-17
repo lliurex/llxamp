@@ -1,10 +1,16 @@
 [Desktop Entry]
+Version=1.0
+Encoding=UTF-8
+Terminal=false
 Type=Application
-Name=Mount llxamp environment
-TryExec=llxamp-user-mount
+Categories=Utility;
+Comment[ca_ES]=Munta l'entorn LlxAMP
+Comment=Mount LlxAMP environment
 Exec=llxamp-user-mount
-StartupNotify=false
+GenericName[ca_ES]=Muntador d'usuari LlxAMP
+GenericName=User LlxAMP mounter
+Name[ca_ES]=Muntador d'usuari LlxAMP
+Name=User LlxAMP mounter
 NoDisplay=true
-
-X-GNOME-Autostart-Phase=Initialization
+StartupNotify=false
 X-KDE-autostart-phase=1
