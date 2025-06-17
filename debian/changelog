@@ -1,3 +1,9 @@
+llxamp (0.2.5) noble; urgency=medium
+
+  * Fix xdg user mount
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Tue, 17 Jun 2025 11:45:27 +0200
+
 llxamp (0.2.4) noble; urgency=medium
 
   * Fix ssl hardcoded paths
