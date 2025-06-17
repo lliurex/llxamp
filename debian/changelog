@@ -1,3 +1,9 @@
+llxamp (0.2.5) jammy; urgency=medium
+
+  * Fix xdg user mount
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Tue, 17 Jun 2025 11:44:10 +0200
+
 llxamp (0.2.4) jammy; urgency=medium
 
   * Fix ssl hardcoded paths
