@@ -19,6 +19,9 @@ export DH_VERBOSE = 1
 override_dh_compress:
 	dh_compress -X.md
 
+override_dh_clean:
+	rm debian/zero-lliurex-llxamp.pkexec
+	dh_clean
 
 # dh_make generated override targets
 # This is example for Cmake (See https://bugs.debian.org/641051 )

@@ -23,7 +23,7 @@ DEBUG=False
 
 EXIT_TIMER=500
 READLOG_TIMER=2000
-STATUS_TIMER=30000
+STATUS_TIMER=5000
 
 MAX_LINES=1000
 
@@ -1454,7 +1454,7 @@ class MainApp(QtWidgets.QMainWindow):
                 fontfamily = newfont.families()
                 fontpointsize = newfont.pointSize()
                 self.font_reload(self)
-                dialog.findChild('save_button').setText(f'{fontfamily[0]} [{fontpointsize}]')
+                dialog.findChild(QtCore.QObject,'save_button').setText(f'{fontfamily[0]} [{fontpointsize}]')
                 preferences['fontfamily']=fontfamily
                 preferences['fontpointsize']=fontpointsize
         else:

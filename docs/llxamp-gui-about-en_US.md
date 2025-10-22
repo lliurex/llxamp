@@ -71,19 +71,42 @@ If you don't want to use this folder, it will also be possible to enable the *"u
 
 ## How can I use VirtualHosts?
 
-A limitation when running in user mode is that certain system files cannot be modified, therefore only *.local* domains can be used.
+One limitation when running in user mode is that certain system files cannot be modified, so only *.local* domains can be used.
 
-To use them, the corresponding sections must be configured in the Apache configuration file using the desired domain,
-For example:
+By default, Llxamp does not have virtual hosts enabled, but they can be easily activated if desired.
+
+To use them, you must configure the corresponding sections in the Apache configuration files via the main file (httpd.conf).
+
+How to quickly proceed:
+
+Edit httpd.conf from the "Apache" menu to uncomment the line:
 
 ```
-<VirtualHost example.local:8080>
-    DocumentRoot "/webexample"
-    ServerName example.local
+# Virtual hosts
+Include conf/extra/httpd-vhosts.conf
+```
 
-    # other directives here
+With this option, when restarting the Apache service, a new editable file for configuring virtual hosts is included.
+
+You can replace the default content to create a virtual host (example.local) with a different one.
+
+Contents of the httpd-vhosts.conf file
+
+```
+<Directory "/home/user/llxamp/httpd/htdocs-example">
+Options Indexes FollowSymLinks
+AllowOverride None
+Require all granted
+</Directory>
+<VirtualHost example.local:8080>
+DocumentRoot "/home/user/llxamp/httpd/htdocs-example"
+ServerName example.local
 </VirtualHost>
 ```
+
+Afterwards, you must restart the service again for the new configuration to take effect.
+
+Note: Hostname resolution is only active while the Apache service is running; if it is running, it will not work. You can check by running a command like "ping" (e.g., *ping example.local*).
 
 ## How can I use the MariaDB installation from the command line?
 

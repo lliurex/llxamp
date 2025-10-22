@@ -1,3 +1,14 @@
+llxamp (0.2.5.1) noble; urgency=medium
+
+  * Fix bug when change fontsize
+  * Wayland fixes
+  * Python deprecation warnings
+  * Install more verbose
+  * Updated doc
+  * Decreased status detection wait
+
+ -- M.Angel Juan <m.angel.juan@gmail.com>  Wed, 22 Oct 2025 20:02:49 +0200
+
 llxamp (0.2.5) noble; urgency=medium
 
   * Fix xdg user mount

@@ -71,19 +71,42 @@ Si no es desitja utilitzar aquesta carpeta, també serà possible habilitar el m
 
 ## Com puc utilitzar VirtualHosts?
 
-Una limitació quan s'executa en mode usuari és que no poden modificar-se certs fitxers del sistema, per tant poden utilitzar-se sols dominis *.local*
+Una limitació quan s'executa en mode usuari és que no poden modificar-se uns certs fitxers del sistema, per tant poden utilitzar-se només dominis *.local*
 
-Per a utilitzar-los s'han de configurar les corresponents seccions en el fitxer de configuració d'Apache utilitzant el domini desitjat,
-Per exemple:
+Per defecte, Llxamp no té actiu l'ús de "hosts" virtuals, però poden activar-se facilment si és desitjat.
+
+Per a utilitzar-los s'han de configurar les corresponents seccions en els fitxers de configuració d'Apache a través del fitxer principal (*httpd.conf*)
+
+Com procedir ràpidament:
+
+Editar *httpd.conf* des del menú "Apache" per a eliminar el comentari de la línia:
 
 ```
-<VirtualHost exemple.local:8080>
-    DocumentRoot "/webexemple"
-    ServerName exemple.local
+# Virtual hosts
+Include conf/extra/httpd-vhosts.conf
+```
 
-    # altres directives ací
+Mitjançant està opció en reiniciar el servici Apache, s'inclou un nou fitxer editable per a la configuració de "hosts" virtuals
+
+Es pot substituir el contingut per defecte per a crear un "host" virtual (exemple.local) amb un contingut diferent
+
+Contingut del fitxer *httpd-vhosts.conf*
+
+```
+<Directory "/home/usuari/llxamp/httpd/htdocs-exemple">
+ Options Indexes FollowSymLinks
+ AllowOverride None
+ Require all granted
+</Directory>
+<VirtualHost exemple.local:8080>
+ DocumentRoot "/home/usuari/llxamp/httpd/htdocs-exemple"
+ ServerName exemple.local
 </VirtualHost>
 ```
+
+Posteriorment és necessari reiniciar novament el servici perquè la nova configuració siga aplicada.
+
+Nota: La resolució del nom de "host", només està activa mentres el servici Apache està encés, si està apagat no serà funcional. És possible realitzar la comprovació executant un comandament com "ping" (ej, *ping exemple.local*).
 
 ## Com puc utilitzar la instal·lació MariaDB des de línia de comandaments?
 

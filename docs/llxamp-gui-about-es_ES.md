@@ -73,17 +73,40 @@ Si no se desea utilizar esta carpeta, también será posible habilitar el modulo
 
 Una limitación cuando se ejecuta en modo usuario es que no pueden modificarse ciertos ficheros del sistema, por lo tanto pueden utilizarse sólo dominios *.local*
 
-Para utilizarlos se deben configurar las correspondientes secciones en el fichero de configuración de Apache utilizando el dominio deseado, 
-Por ejemplo: 
+Por defecto, Llxamp no tiene activo el uso de hosts virtuales, pero pueden activarse fácilmente si es deseado.
+
+Para utilizarlos se deben configurar las correspondientes secciones en los ficheros de configuración de Apache a través del fichero principal (httpd.conf)
+
+Como proceder rápidamente:
+
+Editar httpd.conf desde el menú "Apache" para eliminar el comentario de la línea:
 
 ```
-<VirtualHost ejemplo.local:8080>
-    DocumentRoot "/webejemplo"
-    ServerName ejemplo.local
+# Virtual hosts
+Include conf/extra/httpd-vhosts.conf
+```
 
-    # otras directivas aquí
+Mediante está opción al reiniciar el servicio Apache, se incluye un nuevo fichero editable para la configuración de hosts virtuales.
+
+Se puede sustituir el contenido por defecto para crear un host virtual (ejemplo.local) con un contenido diferente
+
+Contenido del fichero httpd-vhosts.conf
+
+```
+<Directory "/home/usuario/llxamp/httpd/htdocs-ejemplo">
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+<VirtualHost ejemplo.local:8080>
+    DocumentRoot "/home/usuario/llxamp/httpd/htdocs-ejemplo"
+    ServerName ejemplo.local
 </VirtualHost>
 ```
+
+Posteriormente es necesario reiniciar nuevamente el servicio para que la nueva configuración sea aplicada.
+
+Nota: La resolución del nombre de host, sólo está activa mientras el servicio Apache está encendido, si está apagado no será funcional. Es posible realizar la comprobación ejecutando un comando como "ping" (ej, *ping ejemplo.local*).
 
 ## ¿Como puedo utilizar la instalación MariaDB desde línea de comandos?
 

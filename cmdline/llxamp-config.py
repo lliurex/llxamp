@@ -74,7 +74,7 @@ def read_file(filename):
 def filter_comments(txtlist):
     filtered=[]
     for line in txtlist:
-        if not re.match(f'^\s*({COMMENT}|$)',line):
+        if not re.match(f'^\\s*({COMMENT}|$)',line):
             filtered.append(line)
     return filtered
 
@@ -205,7 +205,7 @@ def print_hierarchy(hierarchy={},comments=False,level=0):
 def filter_generic_comments(content):
     filtered=[]
     for line in content:
-        if not re.match(f'^\s*({COMMENT}|$)',line):
+        if not re.match(f'^\\s*({COMMENT}|$)',line):
             filtered.append(line)
         else:
             if COMMENT_LLXAMP in line:
@@ -215,7 +215,7 @@ def filter_generic_comments(content):
 def filter_llxamp_comments(content):
     filtered=[]
     for line in content:
-        if not re.match(f'^\s*({COMMENT}|$)',line):
+        if not re.match(f'^\\s*({COMMENT}|$)',line):
             filtered.append(line)
         else:
             if not COMMENT_LLXAMP in line:

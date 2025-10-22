@@ -18,4 +18,4 @@
 # along with LLXAMP.  If not, see <http://www.gnu.org/licenses/>.
 
 port=$(sed -nr 's|^[ a-Z]*listen\s+([0-9]+)|\1|igp' @@LLXAMP_BASEPATH@@/httpd/conf/httpd.conf)
-xdg-open "http://localhost:$port/phpMyAdmin/index.php" &
+xdg-open "http://localhost:$port/phpMyAdmin/index.php" 2>/dev/null
