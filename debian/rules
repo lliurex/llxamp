@@ -20,7 +20,7 @@ override_dh_compress:
 	dh_compress -X.md
 
 override_dh_clean:
-	rm debian/zero-lliurex-llxamp.pkexec
+	rm -f debian/zero-lliurex-llxamp.pkexec
 	dh_clean
 
 # dh_make generated override targets
